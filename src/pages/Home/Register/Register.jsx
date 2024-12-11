@@ -3,6 +3,7 @@ import registerLottieData from "../../../assets/Animation - 1733900703492.json";
 import { useContext } from "react";
 import AuthContext from "../../../context/AuthContext/AuthContext";
 import { Link } from "react-router-dom";
+import SocialLogin from "../../common/SocialLogin";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
@@ -100,6 +101,10 @@ const Register = () => {
             </Link>
           </p>
         </form>
+        
+        <div className="my-2">
+        <SocialLogin></SocialLogin>
+        </div>
       </div>
     </div>
   );

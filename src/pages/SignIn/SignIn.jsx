@@ -3,6 +3,7 @@ import loginLottieData from "../../assets/Animation - 1733900703492.json";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import AuthContext from "../../context/AuthContext/AuthContext";
+import SocialLogin from "../common/SocialLogin";
 
 
 const SignIn = () => {
@@ -90,6 +91,7 @@ const SignIn = () => {
             </Link>
           </p>
         </form>
+        <SocialLogin></SocialLogin>
       </div>
     </div>
   );

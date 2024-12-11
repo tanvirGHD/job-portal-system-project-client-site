@@ -65,10 +65,10 @@ const Navbar = () => {
       <div className="navbar-end gap-3">
         {
           user ? <> 
-          <button onClick={handleSignOut} className="btn">Sign Out</button>
+          <button onClick={handleSignOut} className="btn bg-blue-500 text-white hover:bg-blue-600">Sign Out</button>
           </> : <>
-          <Link to="/register">Register</Link>
-          <Link to="/signin" className="btn">Sign In</Link>
+          <Link to="/register" className="btn bg-blue-500 text-white hover:bg-blue-600">Register</Link>
+          <Link to="/signin" className="btn bg-blue-500 text-white hover:bg-blue-600">Sign In</Link>
           </>
         }
       </div>
