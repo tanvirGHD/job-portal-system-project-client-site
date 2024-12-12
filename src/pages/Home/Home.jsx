@@ -3,7 +3,7 @@ import bannerLottieData from "../../assets/Animation - 1733944931898.json";
 import { easeOut, motion } from "framer-motion";
 const Home = () => {
   return (
-    <div className="md:flex md:flex-row-reverse items-center text-center p-5 bg-blue-50 font-sans">
+    <div className="md:flex md:flex-row-reverse items-center text-center p-5 mt-4 md:mt-8 bg-blue-50 font-sans">
       {/* Animation Section (on the left side on larger screens) */}
       <div className="w-full flex justify-center sm:justify-end mt-5 sm:mt-0 mb-5 sm:mb-0">
         <div>
