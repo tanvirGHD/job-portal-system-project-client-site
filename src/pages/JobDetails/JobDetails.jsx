@@ -1,9 +1,10 @@
 import { div } from "motion/react-client";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const JobDetails = () => {
     const job = useLoaderData();
     const {
+        _id,
         title,
         location,
         jobType,
@@ -22,7 +23,7 @@ const JobDetails = () => {
 
     return (
         <div>
-        <h2 className="text-3xl border-b border-[#d3dbfd] py-3 font-bold text-[#91A6FE] text-center">Job details for {title}</h2>
+        <h2 className="md:text-3xl text-xl border-b border-[#d3dbfd] py-3 font-bold text-[#91A6FE] text-center">Job details for {title}</h2>
         <div className="my-10 flex justify-center px-4">
             <div className="max-w-5xl w-full border rounded-lg shadow-lg p-6 bg-white">
                 {/* Top Section */}
@@ -97,9 +98,11 @@ const JobDetails = () => {
                         <p className="text-gray-700">{company}</p>
                     </div>
                     <div className="flex gap-4 mt-4 md:mt-0">
+                        <Link to={`/jobApply/${_id}`}>
                         <button className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300">
                             Apply Now
                         </button>
+                        </Link>
                         <button className="bg-gray-400 text-white py-2 px-4 rounded hover:bg-gray-500 transition duration-300">
                             Save Job
                         </button>

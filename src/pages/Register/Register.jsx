@@ -1,10 +1,9 @@
 import Lottie from "lottie-react";
-import registerLottieData from "../../assets/Animation - 1733900703492.json"
+import registerLottieData from "../../assets/Animation - 1733900703492.json";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../../context/AuthContext/AuthContext";
 import SocialLogin from "../common/SocialLogin";
-
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
@@ -38,7 +37,7 @@ const Register = () => {
   };
 
   return (
-    <div className="card bg-blue-50 w-full max-w-4xl mx-auto mt-20 p-6 rounded-lg shadow-lg flex flex-col md:flex-row items-center justify-center gap-6">
+    <div className="card bg-blue-50 w-full max-w-4xl mx-auto mt-20 p-6 rounded-lg shadow-lg flex flex-col md:flex-row-reverse items-center justify-center gap-6">
       {/* Animation Section */}
       <div className="flex-1 flex items-center justify-center">
         <div className="w-48 md:w-64">
@@ -93,7 +92,7 @@ const Register = () => {
           </div>
 
           <p className="text-center text-sm text-blue-600">
-           Already have an account?{" "} 
+            Already have an account?{" "}
             <Link
               to="/signin"
               className="link link-hover text-blue-800 font-semibold"
@@ -102,9 +101,9 @@ const Register = () => {
             </Link>
           </p>
         </form>
-        
+
         <div className="my-2">
-        <SocialLogin></SocialLogin>
+          <SocialLogin></SocialLogin>
         </div>
       </div>
     </div>
