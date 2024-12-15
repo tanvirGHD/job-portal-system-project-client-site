@@ -1,13 +1,14 @@
 import Lottie from "lottie-react";
 import React from "react";
 import loginLottieData from "../../assets/Animation - 1734200309818.json";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
 
 const JobApply = () => {
   const { id } = useParams();
   const { user } = useAuth();
+  const navigate = useNavigate();
 //   console.log(id, user);
 
   const handleJobApply = (e) => {
@@ -50,7 +51,7 @@ const JobApply = () => {
       experience,
     };
 
-    fetch('http://localhost:3000/job-application',{
+    fetch('http://localhost:3000/job-applications',{
         method: 'POST',
         headers: {
             'content-type' : 'application/json'
@@ -67,6 +68,7 @@ const JobApply = () => {
                 showConfirmButton: false,
                 timer: 1500
               });
+              navigate('/myApplications')
         }
     })
 
