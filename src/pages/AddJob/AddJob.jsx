@@ -32,7 +32,7 @@ const AddJob = () => {
             showConfirmButton: false,
             timer: 1500
           });
-          Navigate('/myApplication')
+          Navigate('/myPostJobs')
         }
     })
   }
@@ -265,6 +265,7 @@ const AddJob = () => {
               placeholder="Enter job description"
             />
           </div>
+
 
           {/* Company and Logo */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
