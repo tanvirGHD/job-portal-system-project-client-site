@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
+import { Link } from "react-router-dom";
 
 const MyPostedJobs = () => {
     const [jobs, setJobs] = useState([]);
@@ -98,7 +99,20 @@ const MyPostedJobs = () => {
                             <strong>Application Deadline:</strong>{" "}
                             {selectedJob.applicationDeadline}
                         </p>
-                        <p className="text-gray-700 mt-4">{selectedJob.description}</p>
+                        <div className="flex justify-between items-center">
+                        <div>
+                            <p className="text-gray-700 mt-4">{selectedJob.description}</p>
+                            <p className="text-gray-700 mt-4 font-bold">Application Count: {selectedJob.applicationCount}</p>
+                        </div>
+                        <div>
+                            <Link to={`/viewApplication/${selectedJob._id}`}>
+                            <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                            View Application
+                            </button>
+                            </Link>
+                        </div>
+                        </div>
+
                     </div>
                 </div>
             )}
