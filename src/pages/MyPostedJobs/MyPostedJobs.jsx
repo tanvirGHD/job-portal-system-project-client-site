@@ -112,7 +112,6 @@ const MyPostedJobs = () => {
                             </Link>
                         </div>
                         </div>
-
                     </div>
                 </div>
             )}
