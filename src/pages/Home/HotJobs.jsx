@@ -3,14 +3,16 @@ import { Link } from "react-router-dom";
 
 const HotJobs = () => {
   const [jobs, setJobs] = useState([]);
+  const [sort, setSort] = useState(false)
+  console.log(sort)
 
   useEffect(() => {
-    fetch("http://localhost:3000/jobs")
+    fetch(`http://localhost:3000/jobs?sort=${sort}`)
       .then((res) => res.json())
       .then((data) => {
         setJobs(data);
       });
-  }, []);
+  }, [sort]);
 
   return (
     <div className="my-5 md:my-10">
@@ -22,6 +24,11 @@ const HotJobs = () => {
           Search and connect with the right candidates faster.
         </p>
       </div>
+
+    <div className="bg-blue-100 flex p-4">
+      <button onClick={()=>setSort(!sort)} className={`btn btn-neutral ${sort && "btn-success"}`}> {sort == true ? "Sorted By Salary" : "Sort By Salary" } </button>
+    </div>
+
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
         {jobs.map((job) => (
           <div
